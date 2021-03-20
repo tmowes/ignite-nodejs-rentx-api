@@ -1,0 +1,15 @@
+import { Response, Request } from "express";
+
+import { {{pascalCase name}}UseCase } from "./{{pascalCase name}}UseCase";
+
+export class {{pascalCase name}}Controller {
+constructor(private {{pascalCase name}}UseCase: {{pascalCase name}}UseCase) { }
+
+handle(request: Request, response: Response): Response {
+try {
+return response.status(200).send()
+} catch (error) {
+return response.status(400).json({ error: error.message });
+}
+}
+}

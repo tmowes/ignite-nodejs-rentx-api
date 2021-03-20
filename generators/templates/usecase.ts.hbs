@@ -1,0 +1,13 @@
+import { {{pascalCase model}} } from "../../model/{{pascalCase model}}"
+import { I{{pascalCase repository}}Repository } from "../../repositories/I{{pascalCase repository}}Repository"
+
+interface IRequest {}
+
+export class {{pascalCase name}}UseCase {
+constructor(private {{camelCase repository}}Repository: I{{pascalCase repository}}Repository) { }
+
+execute({ }: IRequest): {{pascalCase model}} {
+const new{{pascalCase model}} = this.{{camelCase repository}}Repository
+return new{{pascalCase model}}
+}
+}

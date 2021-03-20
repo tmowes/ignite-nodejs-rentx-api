@@ -1,13 +1,17 @@
 import express, { json } from 'express'
+import swaggerUI from 'swagger-ui-express'
 
-import { categoriesRoutes } from './routes/categories.routes'
+import { appRoutes } from './routes'
+import swaggerFile from './swagger.json'
 
 const app = express()
 
 app.use(json())
 
-app.use('/categories', categoriesRoutes)
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerFile))
+
+app.use(appRoutes)
 
 const port = 3333
 
-app.listen(port, () => console.log(`Server is running on port:${port}`))
+app.listen(port, () => console.log(`Server is running on port: ${port}`))
