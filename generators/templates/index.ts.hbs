@@ -1,9 +1,0 @@
-import { {{pascalCase repository}}Repository } from "../../repositories/implementations/{{pascalCase
-repository}}Repository";
-import { {{pascalCase name}}Controller } from "./{{pascalCase name}}Controller";
-import { {{pascalCase name}}UseCase } from "./{{pascalCase name}}UseCase";
-
-const {{camelCase repository}}Repository = {{pascalCase repository}}Repository.getInstance();
-
-const {{camelCase name}}UseCase = new {{pascalCase name}}UseCase({{camelCase repository}}Repository);
-export const {{camelCase name}}Controller = new {{pascalCase name}}Controller({{camelCase name}}UseCase);

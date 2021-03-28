@@ -1,0 +1,11 @@
+# build docker
+docker build -t rentx .
+
+# build docker
+docker run -p 3333:3333 rentx
+
+# docker up
+docker-compose up --force-recreate -d
+
+# docker log
+docker logs rentx -f

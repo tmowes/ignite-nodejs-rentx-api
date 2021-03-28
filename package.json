@@ -1,11 +1,12 @@
 {
-  "name": "ignite-rentalx-api",
+  "name": "ignite-rentx-api",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "new:usecase": "yarn plop --plopfile ./generators/plopfile.js",
+    "typeorm": "tsnd ./node_modules/typeorm/cli.js",
     "lint": "eslint . --ext ts,tsx",
     "lint:f": "eslint --fix . --ext ts,tsx"
   },
@@ -14,7 +15,11 @@
     "csv-parse": "^4.15.3",
     "express": "^4.17.1",
     "multer": "^1.4.2",
+    "pg": "^8.5.1",
+    "reflect-metadata": "^0.1.13",
     "swagger-ui-express": "^4.1.6",
+    "tsyringe": "^4.5.0",
+    "typeorm": "^0.2.31",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

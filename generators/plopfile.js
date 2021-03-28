@@ -11,8 +11,8 @@ module.exports = function (plop) {
       },
       {
         type: 'input',
-        name: 'model',
-        message: 'model name?',
+        name: 'entity',
+        message: 'entity name?',
       },
       {
         type: 'input',
@@ -28,11 +28,6 @@ module.exports = function (plop) {
 
     // actions to perform
     actions: [
-      {
-        type: 'add',
-        path: '../src/modules/{{camelCase module}}/useCases/{{camelCase name}}/index.ts',
-        templateFile: 'templates/index.ts.hbs',
-      },
       {
         type: 'add',
         path: '../src/modules/{{camelCase module}}/useCases/{{camelCase name}}/{{pascalCase name}}Controller.ts',

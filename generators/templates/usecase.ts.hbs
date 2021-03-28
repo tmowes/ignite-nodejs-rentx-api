@@ -1,4 +1,4 @@
-import { {{pascalCase model}} } from "../../model/{{pascalCase model}}"
+import { {{pascalCase entity}} } from "../../entities/{{pascalCase entity}}"
 import { I{{pascalCase repository}}Repository } from "../../repositories/I{{pascalCase repository}}Repository"
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -8,8 +8,8 @@ export class {{pascalCase name}}UseCase {
 constructor(private {{camelCase repository}}Repository: I{{pascalCase repository}}Repository) { }
 
 // eslint-disable-next-line no-empty-pattern
-execute({ }: IRequest): {{pascalCase model}} {
-const new{{pascalCase model}} = this.{{camelCase repository}}Repository
-return new{{pascalCase model}}
-}
-}
+async execute({ }: IRequest): Promise<{{pascalCase entity}}> {
+  const new{{pascalCase entity}} = this.{{camelCase repository}}Repository
+  return new{{pascalCase entity}}
+  }
+  }

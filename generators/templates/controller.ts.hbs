@@ -5,7 +5,7 @@ import { {{pascalCase name}}UseCase } from "./{{pascalCase name}}UseCase";
 export class {{pascalCase name}}Controller {
 constructor(private {{camelCase name}}UseCase: {{pascalCase name}}UseCase) { }
 
-handle(request: Request, response: Response): Response {
+async handle(request: Request, response: Response): Response {
 try {
 return response.status(200).send()
 } catch (error) {
