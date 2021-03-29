@@ -1,15 +1,23 @@
+import { inject, injectable } from 'tsyringe'
+
+import AppError from '../../../../errors/AppError'
+import { {{pascalCase name}}DTO } from '../../dtos/{{pascalCase name}}DTO'
 import { {{pascalCase entity}} } from "../../entities/{{pascalCase entity}}"
 import { I{{pascalCase repository}}Repository } from "../../repositories/I{{pascalCase repository}}Repository"
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface IRequest {}
-
+@injectable()
 export class {{pascalCase name}}UseCase {
-constructor(private {{camelCase repository}}Repository: I{{pascalCase repository}}Repository) { }
+constructor(
+@inject('{{pascalCase repository}}Repository')
+private {{camelCase repository}}Repository: I{{pascalCase repository}}Repository) { }
 
-// eslint-disable-next-line no-empty-pattern
-async execute({ }: IRequest): Promise<{{pascalCase entity}}> {
-  const new{{pascalCase entity}} = this.{{camelCase repository}}Repository
+async execute(data: {{pascalCase name}}DTO): Promise<{{pascalCase entity}} | undefined> {
+  const {{camelCase entity}}Exists = await this.{{camelCase repository}}Repository.findByEmail(data.email)
+
+  if ({{camelCase entity}}Exists) {
+  throw new AppError('{{pascalCase entity}} already exists!')
+  }
+  const new{{pascalCase entity}} = this.{{camelCase repository}}Repository.create({...data})
   return new{{pascalCase entity}}
   }
   }

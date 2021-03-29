@@ -1,7 +1,9 @@
 import { inject, injectable } from 'tsyringe'
 
+import AppError from '../../../../errors/AppError'
+import { CreateCategoryDTO } from '../../dtos/CreateCategoryDTO'
 import { Category } from "../../entities/Category"
-import { CreateCategoryDTO, ICategoriesRepository } from "../../repositories/ICategoriesRepository"
+import { ICategoriesRepository } from "../../repositories/ICategoriesRepository"
 
 @injectable()
 export class CreateCategoryUseCase {
@@ -13,7 +15,7 @@ export class CreateCategoryUseCase {
     const categoryExists = await this.categoriesRepository.findByName(name)
 
     if (categoryExists) {
-      throw new Error('Category already exists!')
+      throw new AppError('Category already exists!', 400)
     }
 
     const newCategory = await this.categoriesRepository.create({

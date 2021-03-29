@@ -9,3 +9,10 @@ docker-compose up --force-recreate -d
 
 # docker log
 docker logs rentx -f
+
+
+"name": "name",
+"username": "username",
+"email": "email",
+"password": "password",
+"driver_license": "driver_license"

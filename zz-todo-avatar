@@ -1,0 +1,6 @@
+[x] create column avatar in table user
+[x] refactor user entity
+[x] create upload rules
+[x] create upload controller
+[ ] config multer upload
+[ ] create upload route

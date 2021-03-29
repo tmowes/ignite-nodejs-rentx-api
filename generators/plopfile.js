@@ -38,6 +38,11 @@ module.exports = function (plop) {
         path: '../src/modules/{{camelCase module}}/useCases/{{camelCase name}}/{{pascalCase name}}UseCase.ts',
         templateFile: 'templates/usecase.ts.hbs',
       },
+      {
+        type: 'add',
+        path: '../src/modules/{{camelCase module}}/dtos/{{pascalCase name}}DTO.ts',
+        templateFile: 'templates/dto.ts.hbs',
+      },
     ],
   })
 }
