@@ -1,0 +1,38 @@
+import { {{pascalCase repository}}RepositoryInMemory } from "@modules/{{camelCase
+module}}/repositories/inMemory/{{pascalCase repository}}RepositoryInMemory"
+import AppError from "@shared/errors/AppError"
+
+import { {{pascalCase name}}UseCase } from "./{{pascalCase name}}UseCase"
+
+let {{camelCase name}}UseCase: {{pascalCase name}}UseCase
+let {{camelCase repository}}RepositoryInMemory: {{pascalCase repository}}RepositoryInMemory
+
+describe('{{pascalCase name}}', () => {
+beforeEach(() => {
+{{camelCase repository}}RepositoryInMemory = new {{pascalCase repository}}RepositoryInMemory()
+{{camelCase name}}UseCase = new {{pascalCase name}}UseCase({{camelCase repository}}RepositoryInMemory)
+})
+it('should be able to {{camelCase name}}', async () => {
+const created{{pascalCase entity}} = {
+name: "{{pascalCase entity}} Name Test",
+description: "{{pascalCase entity}} Description Test",
+}
+await {{camelCase name}}UseCase.execute(created{{pascalCase entity}})
+const {{camelCase entity}}Created = await {{camelCase repository}}RepositoryInMemory.findByName(created{{pascalCase
+entity}}.name)
+expect({{camelCase entity}}Created).toHaveProperty('id')
+})
+it('should not be able to {{camelCase name}} with same name', async () => {
+expect(async () => {
+
+const created{{pascalCase entity}} = {
+name: "{{pascalCase entity}} Name Test",
+description: "{{pascalCase entity}} Description Test",
+}
+await {{camelCase name}}UseCase.execute(created{{pascalCase entity}})
+
+await {{camelCase name}}UseCase.execute(created{{pascalCase entity}})
+}).rejects.toBeInstanceOf(AppError)
+
+})
+})

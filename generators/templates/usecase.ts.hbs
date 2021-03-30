@@ -1,9 +1,10 @@
 import { inject, injectable } from 'tsyringe'
 
-import AppError from '../../../../errors/AppError'
-import { {{pascalCase name}}DTO } from '../../dtos/{{pascalCase name}}DTO'
-import { {{pascalCase entity}} } from "../../entities/{{pascalCase entity}}"
-import { I{{pascalCase repository}}Repository } from "../../repositories/I{{pascalCase repository}}Repository"
+import { {{pascalCase name}}DTO } from '@modules/{{camelCase module}}/dtos/{{pascalCase name}}DTO'
+import { {{pascalCase entity}} } from '@modules/{{camelCase module}}/infra/typeorm/entities/{{pascalCase entity}}'
+import { I{{pascalCase repository}}Repository } from '@modules/{{camelCase module}}/repositories/I{{pascalCase
+repository}}Repository'
+import AppError from '@shared/errors/AppError'
 
 @injectable()
 export class {{pascalCase name}}UseCase {
@@ -11,11 +12,11 @@ constructor(
 @inject('{{pascalCase repository}}Repository')
 private {{camelCase repository}}Repository: I{{pascalCase repository}}Repository) { }
 
-async execute(data: {{pascalCase name}}DTO): Promise<{{pascalCase entity}} | undefined> {
-  const {{camelCase entity}}Exists = await this.{{camelCase repository}}Repository.findByEmail(data.email)
+async execute(data: {{pascalCase name}}DTO): Promise<{{pascalCase entity}}> {
+  const {{camelCase entity}}Exists = await this.{{camelCase repository}}Repository.findByName(data.name)
 
   if ({{camelCase entity}}Exists) {
-  throw new AppError('{{pascalCase entity}} already exists!')
+  throw new AppError('{{pascalCase entity}} already exists!', 400)
   }
   const new{{pascalCase entity}} = this.{{camelCase repository}}Repository.create({...data})
   return new{{pascalCase entity}}

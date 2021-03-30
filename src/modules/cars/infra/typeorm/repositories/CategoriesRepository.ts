@@ -11,11 +11,8 @@ export class CategoriesRepository implements ICategoriesRepository {
     this.repository = getRepository(Category)
   }
 
-  async create({ name, description }: CreateCategoryDTO): Promise<Category> {
-    const category = this.repository.create({
-      name,
-      description,
-    })
+  async create(data: CreateCategoryDTO): Promise<Category> {
+    const category = this.repository.create(data)
     await this.repository.save(category)
     return category
   }
@@ -25,7 +22,7 @@ export class CategoriesRepository implements ICategoriesRepository {
     return allCategories
   }
 
-  async findByName(name: string): Promise<Category | undefined> {
+  async findByName(name: string): Promise<Category> {
     const category = await this.repository.findOne({ where: { name } })
     return category
   }

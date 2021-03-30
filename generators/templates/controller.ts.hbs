@@ -8,7 +8,7 @@ export class {{pascalCase name}}Controller {
 async handle(request: Request, response: Response): Promise<Response> {
   try {
   const {{camelCase name}} = container.resolve({{pascalCase name}}UseCase)
-  const new{{pascalCase entity}} = await {{camelCase name}}.execute({ email })
+  const new{{pascalCase entity}} = await {{camelCase name}}.execute({ name })
   return response.status(200).json(new{{pascalCase entity}})
   } catch (error) {
   return response.status(400).json({ error: error.message });

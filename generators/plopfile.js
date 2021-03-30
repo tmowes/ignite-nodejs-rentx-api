@@ -40,6 +40,11 @@ module.exports = function (plop) {
       },
       {
         type: 'add',
+        path: '../src/modules/{{camelCase module}}/useCases/{{camelCase name}}/{{pascalCase name}}.spec.ts',
+        templateFile: 'templates/spec.ts.hbs',
+      },
+      {
+        type: 'add',
         path: '../src/modules/{{camelCase module}}/dtos/{{pascalCase name}}DTO.ts',
         templateFile: 'templates/dto.ts.hbs',
       },
