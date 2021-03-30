@@ -1,9 +1,10 @@
 import { inject, injectable } from 'tsyringe'
 
-import AppError from '../../../../errors/AppError'
-import { CreateSpecificationDTO } from '../../dtos/CreateSpecificationDTO'
-import { Specification } from "../../entities/Specification"
-import { ISpecificationsRepository } from "../../repositories/ISpecificationsRepository"
+import { CreateSpecificationDTO } from '@modules/cars/dtos/CreateSpecificationDTO'
+import { Specification } from '@modules/cars/infra/typeorm/entities/Specification'
+import { ISpecificationsRepository } from '@modules/cars/repositories/ISpecificationsRepository'
+import AppError from '@shared/errors/AppError'
+
 
 @injectable()
 export class CreateSpecificationUseCase {
@@ -11,7 +12,7 @@ export class CreateSpecificationUseCase {
     @inject('SpecificationsRepository')
     private specificationsRepository: ISpecificationsRepository) { }
 
-  async execute({ name, description }: CreateSpecificationDTO): Promise<Specification | undefined> {
+  async execute({ name, description }: CreateSpecificationDTO): Promise<Specification> {
     const specificationExists = await this.specificationsRepository.findByName(name)
 
     if (specificationExists) {

@@ -1,11 +1,10 @@
 import { hash } from 'bcrypt'
 import { inject, injectable } from 'tsyringe'
 
-import AppError from '../../../../errors/AppError'
-import { CreateUserDTO } from '../../dtos/CreateUserDTO'
-import { User } from "../../entities/User"
-import { IUsersRepository } from "../../repositories/IUsersRepository"
-
+import { CreateUserDTO } from '@modules/accounts/dtos/CreateUserDTO'
+import { User } from '@modules/accounts/infra/typeorm/entities/User'
+import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository'
+import AppError from '@shared/errors/AppError'
 
 @injectable()
 export class CreateUserUseCase {

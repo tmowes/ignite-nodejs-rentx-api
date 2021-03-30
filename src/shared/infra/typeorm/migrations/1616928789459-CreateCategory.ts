@@ -1,6 +1,7 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-import { categoryTableName } from "../../modules/cars/entities/Category";
+import { categoryTableName } from "@modules/cars/infra/typeorm/entities/Category";
+
 import { idColumn, timestampColumns } from "./utils";
 
 export class CreateCategory1616928789459 implements MigrationInterface {

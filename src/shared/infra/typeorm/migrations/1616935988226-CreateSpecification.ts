@@ -1,6 +1,7 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-import { specificationTableName } from "../../modules/cars/entities/Specification";
+import { specificationTableName } from "@modules/cars/infra/typeorm/entities/Specification";
+
 import { idColumn, timestampColumns } from "./utils";
 
 export class CreateSpecification1616935988226 implements MigrationInterface {

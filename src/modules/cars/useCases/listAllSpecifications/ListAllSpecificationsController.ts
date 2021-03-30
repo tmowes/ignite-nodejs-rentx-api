@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { container } from 'tsyringe'
 
-
 import { ListAllSpecificationsUseCase } from "./ListAllSpecificationsUseCase";
 
 export class ListAllSpecificationsController {

@@ -1,10 +1,10 @@
 import { inject, injectable } from 'tsyringe'
 
-import AppError from '../../../../errors/AppError'
-import { deleteFile } from '../../../../utils/file'
-import { UpdateUserAvatarDTO } from '../../dtos/UpdateUserAvatarDTO'
-import { User } from "../../entities/User"
-import { IUsersRepository } from "../../repositories/IUsersRepository"
+import { UpdateUserAvatarDTO } from '@modules/accounts/dtos/UpdateUserAvatarDTO'
+import { User } from '@modules/accounts/infra/typeorm/entities/User'
+import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository'
+import AppError from '@shared/errors/AppError'
+import { deleteFile } from '@utils/file'
 
 @injectable()
 export class UpdateUserAvatarUseCase {
