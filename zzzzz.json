@@ -1,0 +1,9 @@
+{
+  "name": "Model X",
+  "description": " carro eletrico",
+  "daily_rate": 140,
+  "license_plate": "USA-6969",
+  "fine_amount": 100,
+  "brand": "Tesla",
+  "category_id": "558b50f4-98f1-4e88-a320-0e5360ac8de5"
+}

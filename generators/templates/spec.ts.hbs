@@ -23,16 +23,14 @@ entity}}.name)
 expect({{camelCase entity}}Created).toHaveProperty('id')
 })
 it('should not be able to {{camelCase name}} with same name', async () => {
-expect(async () => {
-
 const created{{pascalCase entity}} = {
 name: "{{pascalCase entity}} Name Test",
 description: "{{pascalCase entity}} Description Test",
 }
 await {{camelCase name}}UseCase.execute(created{{pascalCase entity}})
-
-await {{camelCase name}}UseCase.execute(created{{pascalCase entity}})
-}).rejects.toBeInstanceOf(AppError)
+await expect(
+{{camelCase name}}UseCase.execute(created{{pascalCase entity}})
+).rejects.toEqual(new AppError("Message"))
 
 })
 })

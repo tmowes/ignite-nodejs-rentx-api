@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-empty-interface */
+import { Specification } from "../infra/typeorm/entities/Specification";
+
 export interface CreateCarDTO {
   name: string
   description: string
@@ -7,4 +8,6 @@ export interface CreateCarDTO {
   fine_amount: number
   brand: string
   category_id: string
+  specifications?: Specification[]
+  id?: string
 }

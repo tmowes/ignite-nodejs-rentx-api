@@ -1,9 +1,9 @@
 import { CreateSpecificationDTO } from "@modules/cars/dtos/CreateSpecificationDTO"
 import { Specification } from "@modules/cars/infra/typeorm/entities/Specification"
 
-import { ICategoriesRepository } from "../ICategoriesRepository"
+import { ISpecificationsRepository } from "../ISpecificationsRepository"
 
-export class CategoriesRepositoryInMemory implements ICategoriesRepository {
+export class SpecificationsRepositoryInMemory implements ISpecificationsRepository {
   private specifications: Specification[]
   constructor() {
     this.specifications = []
@@ -24,5 +24,10 @@ export class CategoriesRepositoryInMemory implements ICategoriesRepository {
   async findByName(name: string): Promise<Specification> {
     const specification = this.specifications.find((specification) => specification.name === name)
     return specification
+  }
+
+  async findByIds(ids: string[]): Promise<Specification[]> {
+    const allSpecifications = this.specifications.filter(specification => ids.includes(specification.id))
+    return allSpecifications
   }
 }

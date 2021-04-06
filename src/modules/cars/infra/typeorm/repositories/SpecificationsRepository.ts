@@ -26,4 +26,9 @@ export class SpecificationsRepository implements ISpecificationsRepository {
     const specification = await this.repository.findOne({ where: { name } })
     return specification
   }
+
+  async findByIds(ids: string[]): Promise<Specification[]> {
+    const specificationsIds = await this.repository.findByIds(ids)
+    return specificationsIds
+  }
 }

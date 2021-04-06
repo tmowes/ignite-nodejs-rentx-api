@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-import { carsTableName } from "@modules/cars/infra/typeorm/entities/Cars";
+import { carsTableName } from "@modules/cars/infra/typeorm/entities/Car";
 import { categoryTableName } from "@modules/cars/infra/typeorm/entities/Category";
 
 import { idColumn, timestampColumns } from "./utils";
