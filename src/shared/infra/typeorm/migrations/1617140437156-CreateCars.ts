@@ -1,12 +1,10 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm";
+import { carsTableName } from '@modules/cars/infra/typeorm/entities/Car'
+import { categoryTableName } from '@modules/cars/infra/typeorm/entities/Category'
+import { MigrationInterface, QueryRunner, Table } from 'typeorm'
 
-import { carsTableName } from "@modules/cars/infra/typeorm/entities/Car";
-import { categoryTableName } from "@modules/cars/infra/typeorm/entities/Category";
-
-import { idColumn, timestampColumns } from "./utils";
+import { idColumn, timestampColumns } from './utils'
 
 export class CreateCars1617140437156 implements MigrationInterface {
-
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -28,7 +26,7 @@ export class CreateCars1617140437156 implements MigrationInterface {
           {
             name: 'available',
             type: 'boolean',
-            default: true
+            default: true,
           },
           {
             name: 'license_plate',
@@ -45,26 +43,25 @@ export class CreateCars1617140437156 implements MigrationInterface {
           {
             name: 'category_id',
             type: 'uuid',
-            isNullable: true
+            isNullable: true,
           },
           ...timestampColumns,
         ],
         foreignKeys: [
           {
-            name: "FKCategoryCar",
+            name: 'FKCategoryCar',
             referencedTableName: categoryTableName,
-            referencedColumnNames: ["id"],
-            columnNames: ["category_id"],
-            onDelete: "SET NULL",
-            onUpdate: "SET NULL",
+            referencedColumnNames: ['id'],
+            columnNames: ['category_id'],
+            onDelete: 'SET NULL',
+            onUpdate: 'SET NULL',
           },
         ],
-      }),
+      })
     )
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropTable(carsTableName)
   }
-
 }

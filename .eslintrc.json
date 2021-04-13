@@ -1,6 +1,6 @@
 {
   "env": {
-    "es2020": true,
+    "es2021": true,
     "node": true,
     "jest": true
   },
@@ -21,7 +21,13 @@
     "prettier"
   ],
   "rules": {
-    "prettier/prettier": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": false
+      }
+    ],
     "camelcase": "off",
     "import/no-unresolved": "error",
     "@typescript-eslint/naming-convention": [
@@ -57,7 +63,7 @@
         "newlinesBetween": "always",
         "groups": [
           "module",
-          "/^@/",
+          "/^@shared/",
           [
             "parent",
             "sibling",
@@ -77,7 +83,11 @@
           "**/*.spec.js"
         ]
       }
-    ]
+    ],
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "max-classes-per-file": "off"
   },
   "settings": {
     "import/resolver": {

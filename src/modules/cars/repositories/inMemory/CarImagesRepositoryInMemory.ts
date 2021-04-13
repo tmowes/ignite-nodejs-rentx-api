@@ -1,8 +1,7 @@
-import { CreateCarImageDTO } from '@modules/cars/dtos/CreateCarImageDTO';
+import { CreateCarImageDTO } from '@modules/cars/dtos/CreateCarImageDTO'
 
-import { CarImage } from "../../infra/typeorm/entities/CarImage";
-import { ICarImagesRepository } from "../ICarImagesRepository"
-
+import { CarImage } from '../../infra/typeorm/entities/CarImage'
+import { ICarImagesRepository } from '../ICarImagesRepository'
 
 export class CarImagesRepositoryInMemory implements ICarImagesRepository {
   private carImages: CarImage[]

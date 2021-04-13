@@ -1,10 +1,9 @@
-import { getRepository, Repository } from 'typeorm';
+import { CreateCarDTO } from '@modules/cars/dtos/CreateCarDTO'
+import { ListAvailableCarsDTO } from '@modules/cars/dtos/ListAvailableCarsDTO'
+import { ICarsRepository } from '@modules/cars/repositories/ICarsRepository'
+import { getRepository, Repository } from 'typeorm'
 
-import { CreateCarDTO } from '@modules/cars/dtos/CreateCarDTO';
-import { ListAvailableCarsDTO } from '@modules/cars/dtos/ListAvailableCarsDTO';
-import { ICarsRepository } from '@modules/cars/repositories/ICarsRepository';
-
-import { Car } from '../entities/Car';
+import { Car } from '../entities/Car'
 
 export class CarsRepository implements ICarsRepository {
   private repository: Repository<Car>
@@ -28,8 +27,14 @@ export class CarsRepository implements ICarsRepository {
     return car
   }
 
-  async findAvailable({ brand, category_id, name }: ListAvailableCarsDTO): Promise<Car[]> {
-    const carsQuery = this.repository.createQueryBuilder('c').where('available = :available', { available: true })
+  async findAvailable({
+    brand,
+    category_id,
+    name,
+  }: ListAvailableCarsDTO): Promise<Car[]> {
+    const carsQuery = this.repository
+      .createQueryBuilder('c')
+      .where('available = :available', { available: true })
     if (name) {
       carsQuery.andWhere('c.name = :name', { name })
     }

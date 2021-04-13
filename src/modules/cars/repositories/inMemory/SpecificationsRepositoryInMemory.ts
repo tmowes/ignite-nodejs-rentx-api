@@ -1,9 +1,10 @@
-import { CreateSpecificationDTO } from "@modules/cars/dtos/CreateSpecificationDTO"
-import { Specification } from "@modules/cars/infra/typeorm/entities/Specification"
+import { CreateSpecificationDTO } from '@modules/cars/dtos/CreateSpecificationDTO'
+import { Specification } from '@modules/cars/infra/typeorm/entities/Specification'
 
-import { ISpecificationsRepository } from "../ISpecificationsRepository"
+import { ISpecificationsRepository } from '../ISpecificationsRepository'
 
-export class SpecificationsRepositoryInMemory implements ISpecificationsRepository {
+export class SpecificationsRepositoryInMemory
+  implements ISpecificationsRepository {
   private specifications: Specification[]
   constructor() {
     this.specifications = []
@@ -22,12 +23,16 @@ export class SpecificationsRepositoryInMemory implements ISpecificationsReposito
   }
 
   async findByName(name: string): Promise<Specification> {
-    const specification = this.specifications.find((specification) => specification.name === name)
+    const specification = this.specifications.find(
+      (specification) => specification.name === name
+    )
     return specification
   }
 
   async findByIds(ids: string[]): Promise<Specification[]> {
-    const allSpecifications = this.specifications.filter(specification => ids.includes(specification.id))
+    const allSpecifications = this.specifications.filter((specification) =>
+      ids.includes(specification.id)
+    )
     return allSpecifications
   }
 }

@@ -1,14 +1,13 @@
-import { Response, Request } from "express"
+import { Response, Request } from 'express'
 import { container } from 'tsyringe'
 
-import { UploadCarImageUseCase } from "./UploadCarImageUseCase"
+import { UploadCarImageUseCase } from './UploadCarImageUseCase'
 
 interface IFiles {
   filename: string
 }
 
 export class UploadCarImageController {
-
   async handle(request: Request, response: Response): Promise<Response> {
     try {
       const { id } = request.params
@@ -17,7 +16,7 @@ export class UploadCarImageController {
 
       const uploadCarImage = container.resolve(UploadCarImageUseCase)
 
-      const images_name = images.map(file => file.filename)
+      const images_name = images.map((file) => file.filename)
 
       await uploadCarImage.execute({ car_id: id, images_name })
 

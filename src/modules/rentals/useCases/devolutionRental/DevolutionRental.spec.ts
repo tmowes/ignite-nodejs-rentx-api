@@ -1,10 +1,11 @@
-import { RentalsRepositoryInMemory } from "@modules/rentals/repositories/inMemory/RentalsRepositoryInMemory"
-import AppError from "@shared/errors/AppError"
+// import { RentalsRepositoryInMemory } from '@modules/rentals/repositories/inMemory/RentalsRepositoryInMemory'
 
-import { DevolutionRentalUseCase } from "./DevolutionRentalUseCase"
+// import AppError from '@shared/errors/AppError'
 
-let devolutionRentalUseCase: DevolutionRentalUseCase
-let rentalsRepositoryInMemory: RentalsRepositoryInMemory
+// import { DevolutionRentalUseCase } from './DevolutionRentalUseCase'
+
+// let devolutionRentalUseCase: DevolutionRentalUseCase
+// let rentalsRepositoryInMemory: RentalsRepositoryInMemory
 
 // describe('DevolutionRental', () => {
 //   beforeEach(() => {

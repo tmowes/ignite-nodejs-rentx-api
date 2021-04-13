@@ -1,5 +1,5 @@
-import { CreateCategoryDTO } from "../dtos/CreateCategoryDTO";
-import { Category } from "../infra/typeorm/entities/Category";
+import { CreateCategoryDTO } from '../dtos/CreateCategoryDTO'
+import { Category } from '../infra/typeorm/entities/Category'
 
 export interface ICategoriesRepository {
   findByName(name: string): Promise<Category>

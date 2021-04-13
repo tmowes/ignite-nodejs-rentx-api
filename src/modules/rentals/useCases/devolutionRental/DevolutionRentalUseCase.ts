@@ -1,9 +1,9 @@
-import { inject, injectable } from 'tsyringe'
-
 import { ICarsRepository } from '@modules/cars/repositories/ICarsRepository'
 import { DevolutionRentalDTO } from '@modules/rentals/dtos/DevolutionRentalDTO'
 import { Rental } from '@modules/rentals/infra/typeorm/entities/Rental'
 import { IRentalsRepository } from '@modules/rentals/repositories/IRentalsRepository'
+import { inject, injectable } from 'tsyringe'
+
 import { IDateProvider } from '@shared/container/providers/DateProvider/IDateProvider'
 import AppError from '@shared/errors/AppError'
 
@@ -15,7 +15,8 @@ export class DevolutionRentalUseCase {
     @inject('CarsRepository')
     private carsRepository: ICarsRepository,
     @inject('DateProvider')
-    private dateProvider: IDateProvider) { }
+    private dateProvider: IDateProvider
+  ) {}
 
   async execute({ id, user_id }: DevolutionRentalDTO): Promise<Rental> {
     const minimumRentalDays = 1
@@ -41,11 +42,15 @@ export class DevolutionRentalUseCase {
 
     const carFineAmount = carInRental.fine_amount
 
-    const rentalDelayInDays = this.dateProvider.compareInDays(rental.expected_return_date, this.dateProvider.dateNow())
+    const rentalDelayInDays = this.dateProvider.compareInDays(
+      rental.expected_return_date,
+      this.dateProvider.dateNow()
+    )
 
-    let rentalDailyInDays = this.dateProvider.compareInDays(rental.start_date, this.dateProvider.dateNow())
-
-    console.log({ rentalDelayInDays, rentalDailyInDays })
+    let rentalDailyInDays = this.dateProvider.compareInDays(
+      rental.start_date,
+      this.dateProvider.dateNow()
+    )
 
     if (rentalDailyInDays <= 0) rentalDailyInDays = minimumRentalDays
 
@@ -53,20 +58,15 @@ export class DevolutionRentalUseCase {
 
     if (rentalDelayInDays > 0) {
       const calculateFineAmount = rentalDelayInDays * carFineAmount
-      console.log({ calculateFineAmount })
       total = calculateFineAmount
     }
 
     total += rentalDailyInDays * carDailyAmount
 
-    console.log({ total, rentalDailyInDays, carDailyAmount })
-
     Object.assign(rental, {
       end_date: this.dateProvider.dateNow(),
       total,
     })
-
-    console.log({ rental })
 
     const rentalEnd = await this.rentalsRepository.create(rental)
     await this.carsRepository.updateCarAvailability(rental.car_id, true)

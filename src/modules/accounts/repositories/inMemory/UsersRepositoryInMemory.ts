@@ -1,7 +1,7 @@
-import { CreateUserDTO } from "@modules/accounts/dtos/CreateUserDTO"
-import { User } from "@modules/accounts/infra/typeorm/entities/User"
+import { CreateUserDTO } from '@modules/accounts/dtos/CreateUserDTO'
+import { User } from '@modules/accounts/infra/typeorm/entities/User'
 
-import { IUsersRepository } from "../IUsersRepository"
+import { IUsersRepository } from '../IUsersRepository'
 
 export class UsersRepositoryInMemory implements IUsersRepository {
   private users: User[]
@@ -35,5 +35,4 @@ export class UsersRepositoryInMemory implements IUsersRepository {
     const user = this.users.find((user) => user.id === id)
     return user
   }
-
 }

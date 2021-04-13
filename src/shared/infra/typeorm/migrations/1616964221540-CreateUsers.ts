@@ -1,11 +1,9 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm";
+import { userTableName } from '@modules/accounts/infra/typeorm/entities/User'
+import { MigrationInterface, QueryRunner, Table } from 'typeorm'
 
-import { userTableName } from "@modules/accounts/infra/typeorm/entities/User";
-
-import { idColumn, timestampColumns } from "./utils";
+import { idColumn, timestampColumns } from './utils'
 
 export class CreateUsers1616964221540 implements MigrationInterface {
-
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -37,11 +35,11 @@ export class CreateUsers1616964221540 implements MigrationInterface {
           {
             name: 'isAdmin',
             type: 'boolean',
-            default: false
+            default: false,
           },
           ...timestampColumns,
         ],
-      }),
+      })
     )
   }
 

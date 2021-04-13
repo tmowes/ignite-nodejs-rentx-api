@@ -1,5 +1,5 @@
-import { CreateRentalDTO } from "../dtos/CreateRentalDTO"
-import { Rental } from "../infra/typeorm/entities/Rental"
+import { CreateRentalDTO } from '../dtos/CreateRentalDTO'
+import { Rental } from '../infra/typeorm/entities/Rental'
 
 export interface IRentalsRepository {
   create(data: CreateRentalDTO): Promise<Rental>

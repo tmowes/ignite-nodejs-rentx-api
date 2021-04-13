@@ -1,10 +1,9 @@
-import { Response, Request } from "express";
+import { Response, Request } from 'express'
 import { container } from 'tsyringe'
 
-import { CreateCarUseCase } from "./CreateCarUseCase";
+import { CreateCarUseCase } from './CreateCarUseCase'
 
 export class CreateCarController {
-
   async handle(request: Request, response: Response): Promise<Response> {
     try {
       const {
@@ -15,7 +14,7 @@ export class CreateCarController {
         fine_amount,
         brand,
         category_id,
-      } = request.body;
+      } = request.body
 
       const createCar = container.resolve(CreateCarUseCase)
 
@@ -31,7 +30,7 @@ export class CreateCarController {
 
       return response.status(201).json(newCar)
     } catch (error) {
-      return response.status(400).json({ error: error.message });
+      return response.status(400).json({ error: error.message })
     }
   }
 }

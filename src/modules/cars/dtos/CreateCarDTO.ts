@@ -1,4 +1,4 @@
-import { Specification } from "../infra/typeorm/entities/Specification";
+import { Specification } from '../infra/typeorm/entities/Specification'
 
 export interface CreateCarDTO {
   name: string

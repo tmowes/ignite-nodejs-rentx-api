@@ -1,6 +1,6 @@
-import { CreateCarDTO } from "../dtos/CreateCarDTO";
-import { ListAvailableCarsDTO } from "../dtos/ListAvailableCarsDTO";
-import { Car } from "../infra/typeorm/entities/Car";
+import { CreateCarDTO } from '../dtos/CreateCarDTO'
+import { ListAvailableCarsDTO } from '../dtos/ListAvailableCarsDTO'
+import { Car } from '../infra/typeorm/entities/Car'
 
 export interface ICarsRepository {
   findByLicensePlate(license_plate: string): Promise<Car>

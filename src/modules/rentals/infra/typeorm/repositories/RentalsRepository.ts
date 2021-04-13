@@ -1,9 +1,8 @@
-import { getRepository, Repository } from "typeorm"
+import { CreateRentalDTO } from '@modules/rentals/dtos/CreateRentalDTO'
+import { IRentalsRepository } from '@modules/rentals/repositories/IRentalsRepository'
+import { getRepository, Repository } from 'typeorm'
 
-import { CreateRentalDTO } from "@modules/rentals/dtos/CreateRentalDTO"
-import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsRepository"
-
-import { Rental } from "../entities/Rental"
+import { Rental } from '../entities/Rental'
 
 export class RentalsRepository implements IRentalsRepository {
   private repository: Repository<Rental>
@@ -19,20 +18,23 @@ export class RentalsRepository implements IRentalsRepository {
 
   async findOpenRentalByCar(car_id: string): Promise<Rental> {
     const rentalOpenByCar = await this.repository.findOne({
-      where: { car_id, end_date: null }
+      where: { car_id, end_date: null },
     })
     return rentalOpenByCar
   }
 
   async findOpenRentalByUser(user_id: string): Promise<Rental> {
     const rentalOpenByUser = await this.repository.findOne({
-      where: { user_id, end_date: null }
+      where: { user_id, end_date: null },
     })
     return rentalOpenByUser
   }
 
   async findRentalByUser(user_id: string): Promise<Rental[]> {
-    const rentalsOpenByUser = await this.repository.find({ where: { user_id }, relations: ['car'] })
+    const rentalsOpenByUser = await this.repository.find({
+      where: { user_id },
+      relations: ['car'],
+    })
     return rentalsOpenByUser
   }
 

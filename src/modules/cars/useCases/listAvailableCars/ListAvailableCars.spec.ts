@@ -1,6 +1,6 @@
-import { CarsRepositoryInMemory } from "@modules/cars/repositories/inMemory/CarsRepositoryInMemory"
+import { CarsRepositoryInMemory } from '@modules/cars/repositories/inMemory/CarsRepositoryInMemory'
 
-import { ListAvailableCarsUseCase } from "./ListAvailableCarsUseCase"
+import { ListAvailableCarsUseCase } from './ListAvailableCarsUseCase'
 
 let listAvailableCarsUseCase: ListAvailableCarsUseCase
 let carsRepositoryInMemory: CarsRepositoryInMemory
@@ -8,7 +8,9 @@ let carsRepositoryInMemory: CarsRepositoryInMemory
 describe('List Available Cars', () => {
   beforeEach(() => {
     carsRepositoryInMemory = new CarsRepositoryInMemory()
-    listAvailableCarsUseCase = new ListAvailableCarsUseCase(carsRepositoryInMemory)
+    listAvailableCarsUseCase = new ListAvailableCarsUseCase(
+      carsRepositoryInMemory
+    )
   })
 
   it('should be able to list all available cars', async () => {
@@ -34,7 +36,9 @@ describe('List Available Cars', () => {
       brand: 'Car Brand Test',
       category_id: 'Car category_id Test',
     })
-    const cars = await listAvailableCarsUseCase.execute({ name: 'Car Name Test2', })
+    const cars = await listAvailableCarsUseCase.execute({
+      name: 'Car Name Test2',
+    })
     expect(cars).toEqual([car])
   })
   it('should be able to list all available cars by brand', async () => {
@@ -47,7 +51,9 @@ describe('List Available Cars', () => {
       brand: 'Car Brand Test2',
       category_id: 'Car category_id Test',
     })
-    const cars = await listAvailableCarsUseCase.execute({ brand: 'Car Brand Test2' })
+    const cars = await listAvailableCarsUseCase.execute({
+      brand: 'Car Brand Test2',
+    })
     expect(cars).toEqual([car])
   })
   it('should be able to list all available cars by category', async () => {
@@ -60,7 +66,9 @@ describe('List Available Cars', () => {
       brand: 'Car Brand Test2',
       category_id: 'Car category_id Test2',
     })
-    const cars = await listAvailableCarsUseCase.execute({ category_id: 'Car category_id Test2' })
+    const cars = await listAvailableCarsUseCase.execute({
+      category_id: 'Car category_id Test2',
+    })
     expect(cars).toEqual([car])
   })
 })

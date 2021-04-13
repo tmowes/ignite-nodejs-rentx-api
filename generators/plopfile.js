@@ -30,22 +30,26 @@ module.exports = function (plop) {
     actions: [
       {
         type: 'add',
-        path: '../src/modules/{{camelCase module}}/useCases/{{camelCase name}}/{{pascalCase name}}Controller.ts',
+        path:
+          '../src/modules/{{camelCase module}}/useCases/{{camelCase name}}/{{pascalCase name}}Controller.ts',
         templateFile: 'templates/controller.ts.hbs',
       },
       {
         type: 'add',
-        path: '../src/modules/{{camelCase module}}/useCases/{{camelCase name}}/{{pascalCase name}}UseCase.ts',
+        path:
+          '../src/modules/{{camelCase module}}/useCases/{{camelCase name}}/{{pascalCase name}}UseCase.ts',
         templateFile: 'templates/usecase.ts.hbs',
       },
       {
         type: 'add',
-        path: '../src/modules/{{camelCase module}}/useCases/{{camelCase name}}/{{pascalCase name}}.spec.ts',
+        path:
+          '../src/modules/{{camelCase module}}/useCases/{{camelCase name}}/{{pascalCase name}}.spec.ts',
         templateFile: 'templates/spec.ts.hbs',
       },
       {
         type: 'add',
-        path: '../src/modules/{{camelCase module}}/dtos/{{pascalCase name}}DTO.ts',
+        path:
+          '../src/modules/{{camelCase module}}/dtos/{{pascalCase name}}DTO.ts',
         templateFile: 'templates/dto.ts.hbs',
       },
     ],

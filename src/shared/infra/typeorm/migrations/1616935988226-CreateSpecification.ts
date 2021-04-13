@@ -1,11 +1,9 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm";
+import { specificationTableName } from '@modules/cars/infra/typeorm/entities/Specification'
+import { MigrationInterface, QueryRunner, Table } from 'typeorm'
 
-import { specificationTableName } from "@modules/cars/infra/typeorm/entities/Specification";
-
-import { idColumn, timestampColumns } from "./utils";
+import { idColumn, timestampColumns } from './utils'
 
 export class CreateSpecification1616935988226 implements MigrationInterface {
-
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -22,12 +20,11 @@ export class CreateSpecification1616935988226 implements MigrationInterface {
           },
           ...timestampColumns,
         ],
-      }),
+      })
     )
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropTable(specificationTableName)
   }
-
 }

@@ -1,10 +1,8 @@
-import { getRepository, Repository } from 'typeorm';
+import { CreateCarImageDTO } from '@modules/cars/dtos/CreateCarImageDTO'
+import { ICarImagesRepository } from '@modules/cars/repositories/ICarImagesRepository'
+import { getRepository, Repository } from 'typeorm'
 
-import { CreateCarImageDTO } from '@modules/cars/dtos/CreateCarImageDTO';
-import { ICarImagesRepository } from '@modules/cars/repositories/ICarImagesRepository';
-
-import { CarImage } from '../entities/CarImage';
-
+import { CarImage } from '../entities/CarImage'
 
 export class CarImagesRepository implements ICarImagesRepository {
   private repository: Repository<CarImage>
@@ -17,5 +15,4 @@ export class CarImagesRepository implements ICarImagesRepository {
     await this.repository.save(carImage)
     return carImage
   }
-
 }

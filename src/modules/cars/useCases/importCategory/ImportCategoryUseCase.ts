@@ -1,9 +1,8 @@
+import { Category } from '@modules/cars/infra/typeorm/entities/Category'
+import { ICategoriesRepository } from '@modules/cars/repositories/ICategoriesRepository'
 import csvParse from 'csv-parse'
 import fs from 'fs'
 import { inject, injectable } from 'tsyringe'
-
-import { Category } from '@modules/cars/infra/typeorm/entities/Category'
-import { ICategoriesRepository } from '@modules/cars/repositories/ICategoriesRepository'
 
 interface IRequest {
   file: Express.Multer.File
@@ -18,7 +17,8 @@ interface IImportCategory {
 export class ImportCategoryUseCase {
   constructor(
     @inject('CategoriesRepository')
-    private categoriesRepository: ICategoriesRepository) { }
+    private categoriesRepository: ICategoriesRepository
+  ) {}
 
   loadCategories({ file }: IRequest): Promise<IImportCategory[]> {
     return new Promise((resolve, reject) => {
@@ -29,15 +29,18 @@ export class ImportCategoryUseCase {
 
       stream.pipe(parseFile)
 
-      parseFile.on('data', async (line) => {
-        const [name, description] = line
-        categories.push({ name, description })
-      }).on('end', () => {
-        fs.promises.unlink(file.path)
-        resolve(categories)
-      }).on('error', (err) => {
-        reject(err)
-      })
+      parseFile
+        .on('data', async (line) => {
+          const [name, description] = line
+          categories.push({ name, description })
+        })
+        .on('end', () => {
+          fs.promises.unlink(file.path)
+          resolve(categories)
+        })
+        .on('error', (err) => {
+          reject(err)
+        })
     })
   }
 

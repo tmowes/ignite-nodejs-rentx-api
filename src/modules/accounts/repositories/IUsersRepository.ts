@@ -1,5 +1,5 @@
-import { CreateUserDTO } from "../dtos/CreateUserDTO";
-import { User } from "../infra/typeorm/entities/User";
+import { CreateUserDTO } from '../dtos/CreateUserDTO'
+import { User } from '../infra/typeorm/entities/User'
 
 export interface IUsersRepository {
   findByName(name: string): Promise<User>

@@ -1,9 +1,8 @@
-import { getRepository, Repository } from 'typeorm';
+import { CreateUserDTO } from '@modules/accounts/dtos/CreateUserDTO'
+import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository'
+import { getRepository, Repository } from 'typeorm'
 
-import { CreateUserDTO } from '@modules/accounts/dtos/CreateUserDTO';
-import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
-
-import { User } from '../entities/User';
+import { User } from '../entities/User'
 
 export class UsersRepository implements IUsersRepository {
   private repository: Repository<User>
@@ -35,5 +34,4 @@ export class UsersRepository implements IUsersRepository {
     const user = await this.repository.findOne(id)
     return user
   }
-
 }

@@ -1,4 +1,4 @@
-import { hash } from 'bcrypt'
+import { hash } from 'bcryptjs'
 import request from 'supertest'
 import { Connection } from 'typeorm'
 import { v4 as uuidV4 } from 'uuid'
@@ -47,8 +47,6 @@ describe('List All Categories Controller', () => {
       })
 
     const response = await request(app).get('/categories').send()
-
-    console.log(response.body)
 
     expect(response.status).toBe(200)
     expect(response.body.length).toBe(1)

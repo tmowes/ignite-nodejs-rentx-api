@@ -1,4 +1,7 @@
 import 'reflect-metadata'
+import 'dotenv/config'
+import upload from '@config/upload'
+import cors from 'cors'
 import express, { json, Request, Response, NextFunction } from 'express'
 import 'express-async-errors'
 import swaggerUI from 'swagger-ui-express'
@@ -10,13 +13,16 @@ import createConnection from '@shared/infra/typeorm'
 import swaggerFile from '../../../swagger.json'
 import { appRoutes } from './routes'
 
-
 createConnection()
 const app = express()
+
+app.use(cors())
 
 app.use(json())
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerFile))
+app.use('/avatar', express.static(`${upload.tmpFolder}/avatar`))
+app.use('/cars', express.static(`${upload.tmpFolder}/cars`))
 
 app.use(appRoutes)
 
@@ -32,7 +38,7 @@ app.use(
       status: 'error',
       message: `Internal server error - ${err.message}`,
     })
-  },
+  }
 )
 
 export { app }
