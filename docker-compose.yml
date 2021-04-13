@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
 
-  database_ignite:
+  database:
     image: postgres
     container_name: database_ignite
     restart: always
@@ -24,9 +24,9 @@ services:
     volumes:
       - .:/usr/app
     links:
-      - database_ignite
+      - database
     depends_on:
-      - database_ignite
+      - database
 
 volumes:
   pgdata:
