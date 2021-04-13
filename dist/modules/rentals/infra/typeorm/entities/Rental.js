@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Rental = exports.rentalsTableName = void 0;
 
-var _User = require("@modules/accounts/infra/typeorm/entities/User");
+var _User = require("../../../../accounts/infra/typeorm/entities/User");
 
-var _Car = require("@modules/cars/infra/typeorm/entities/Car");
+var _Car = require("../../../../cars/infra/typeorm/entities/Car");
 
 var _typeorm = require("typeorm");
 

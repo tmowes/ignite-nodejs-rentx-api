@@ -1,8 +1,8 @@
 "use strict";
 
-var _CategoriesRepositoryInMemory = require("@modules/cars/repositories/inMemory/CategoriesRepositoryInMemory");
+var _CategoriesRepositoryInMemory = require("../../repositories/inMemory/CategoriesRepositoryInMemory");
 
-var _AppError = _interopRequireDefault(require("@shared/errors/AppError"));
+var _AppError = _interopRequireDefault(require("../../../../shared/errors/AppError"));
 
 var _CreateCategoryUseCase = require("./CreateCategoryUseCase");
 

@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.CategoriesRepositoryInMemory = void 0;
 
-var _Category = require("@modules/cars/infra/typeorm/entities/Category");
+var _Category = require("../../infra/typeorm/entities/Category");
 
 class CategoriesRepositoryInMemory {
   constructor() {

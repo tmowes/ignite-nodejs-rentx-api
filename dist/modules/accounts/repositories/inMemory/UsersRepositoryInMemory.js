@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.UsersRepositoryInMemory = void 0;
 
-var _User = require("@modules/accounts/infra/typeorm/entities/User");
+var _User = require("../../infra/typeorm/entities/User");
 
 class UsersRepositoryInMemory {
   constructor() {

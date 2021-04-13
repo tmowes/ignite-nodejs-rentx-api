@@ -5,11 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.CreateCategoryUseCase = void 0;
 
-var _ICategoriesRepository = require("@modules/cars/repositories/ICategoriesRepository");
+var _ICategoriesRepository = require("../../repositories/ICategoriesRepository");
 
 var _tsyringe = require("tsyringe");
 
-var _AppError = _interopRequireDefault(require("@shared/errors/AppError"));
+var _AppError = _interopRequireDefault(require("../../../../shared/errors/AppError"));
 
 var _dec, _dec2, _dec3, _dec4, _class;
 

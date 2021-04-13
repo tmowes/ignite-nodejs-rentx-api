@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.specificationsRoutes = void 0;
 
-var _CreateSpecificationController = require("@modules/cars/useCases/createSpecification/CreateSpecificationController");
+var _CreateSpecificationController = require("../../../../modules/cars/useCases/createSpecification/CreateSpecificationController");
 
-var _ListAllSpecificationsController = require("@modules/cars/useCases/listAllSpecifications/ListAllSpecificationsController");
+var _ListAllSpecificationsController = require("../../../../modules/cars/useCases/listAllSpecifications/ListAllSpecificationsController");
 
 var _express = require("express");
 

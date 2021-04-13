@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ListAllCategoriesUseCase = void 0;
 
-var _ICategoriesRepository = require("@modules/cars/repositories/ICategoriesRepository");
+var _ICategoriesRepository = require("../../repositories/ICategoriesRepository");
 
 var _tsyringe = require("tsyringe");
 

@@ -5,17 +5,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.RefreshTokenUseCase = void 0;
 
-var _auth = _interopRequireDefault(require("@config/auth"));
+var _auth = _interopRequireDefault(require("../../../../config/auth"));
 
-var _IUsersTokensRepository = require("@modules/accounts/repositories/IUsersTokensRepository");
+var _IUsersTokensRepository = require("../../repositories/IUsersTokensRepository");
 
 var _jsonwebtoken = require("jsonwebtoken");
 
 var _tsyringe = require("tsyringe");
 
-var _IDateProvider = require("@shared/container/providers/DateProvider/IDateProvider");
+var _IDateProvider = require("../../../../shared/container/providers/DateProvider/IDateProvider");
 
-var _AppError = _interopRequireDefault(require("@shared/errors/AppError"));
+var _AppError = _interopRequireDefault(require("../../../../shared/errors/AppError"));
 
 var _dec, _dec2, _dec3, _dec4, _dec5, _class;
 

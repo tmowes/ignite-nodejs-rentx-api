@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.CreateUsers1616964221540 = void 0;
 
-var _User = require("@modules/accounts/infra/typeorm/entities/User");
+var _User = require("../../../../modules/accounts/infra/typeorm/entities/User");
 
 var _typeorm = require("typeorm");
 

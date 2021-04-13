@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.LocalStorageProvider = void 0;
 
-var _upload = _interopRequireDefault(require("@config/upload"));
+var _upload = _interopRequireDefault(require("../../../../../config/upload"));
 
 var _fs = _interopRequireDefault(require("fs"));
 

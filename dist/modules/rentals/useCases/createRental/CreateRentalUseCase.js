@@ -5,15 +5,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.CreateRentalUseCase = void 0;
 
-var _ICarsRepository = require("@modules/cars/repositories/ICarsRepository");
+var _ICarsRepository = require("../../../cars/repositories/ICarsRepository");
 
-var _IRentalsRepository = require("@modules/rentals/repositories/IRentalsRepository");
+var _IRentalsRepository = require("../../repositories/IRentalsRepository");
 
 var _tsyringe = require("tsyringe");
 
-var _IDateProvider = require("@shared/container/providers/DateProvider/IDateProvider");
+var _IDateProvider = require("../../../../shared/container/providers/DateProvider/IDateProvider");
 
-var _AppError = _interopRequireDefault(require("@shared/errors/AppError"));
+var _AppError = _interopRequireDefault(require("../../../../shared/errors/AppError"));
 
 var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _class;
 

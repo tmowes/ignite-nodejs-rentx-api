@@ -5,11 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ListRentalsByUserUseCase = void 0;
 
-var _IRentalsRepository = require("@modules/rentals/repositories/IRentalsRepository");
+var _IRentalsRepository = require("../../repositories/IRentalsRepository");
 
 var _tsyringe = require("tsyringe");
 
-var _AppError = _interopRequireDefault(require("@shared/errors/AppError"));
+var _AppError = _interopRequireDefault(require("../../../../shared/errors/AppError"));
 
 var _dec, _dec2, _dec3, _dec4, _class;
 

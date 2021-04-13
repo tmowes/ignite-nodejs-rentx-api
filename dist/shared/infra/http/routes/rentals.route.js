@@ -5,11 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.rentalsRoutes = void 0;
 
-var _CreateRentalController = require("@modules/rentals/useCases/createRental/CreateRentalController");
+var _CreateRentalController = require("../../../../modules/rentals/useCases/createRental/CreateRentalController");
 
-var _DevolutionRentalController = require("@modules/rentals/useCases/devolutionRental/DevolutionRentalController");
+var _DevolutionRentalController = require("../../../../modules/rentals/useCases/devolutionRental/DevolutionRentalController");
 
-var _ListRentalsByUserController = require("@modules/rentals/useCases/listRentalsByUser/ListRentalsByUserController");
+var _ListRentalsByUserController = require("../../../../modules/rentals/useCases/listRentalsByUser/ListRentalsByUserController");
 
 var _express = require("express");
 

@@ -1,14 +1,14 @@
 "use strict";
 
-var _CarsRepositoryInMemory = require("@modules/cars/repositories/inMemory/CarsRepositoryInMemory");
+var _CarsRepositoryInMemory = require("../../../cars/repositories/inMemory/CarsRepositoryInMemory");
 
-var _RentalsRepositoryInMemory = require("@modules/rentals/repositories/inMemory/RentalsRepositoryInMemory");
+var _RentalsRepositoryInMemory = require("../../repositories/inMemory/RentalsRepositoryInMemory");
 
 var _dayjs = _interopRequireDefault(require("dayjs"));
 
-var _DayjsDateProvider = require("@shared/container/providers/DateProvider/implementations/DayjsDateProvider");
+var _DayjsDateProvider = require("../../../../shared/container/providers/DateProvider/implementations/DayjsDateProvider");
 
-var _AppError = _interopRequireDefault(require("@shared/errors/AppError"));
+var _AppError = _interopRequireDefault(require("../../../../shared/errors/AppError"));
 
 var _CreateRentalUseCase = require("./CreateRentalUseCase");
 

@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.SendForgotPasswordMailUseCase = void 0;
 
-var _IUsersRepository = require("@modules/accounts/repositories/IUsersRepository");
+var _IUsersRepository = require("../../repositories/IUsersRepository");
 
-var _IUsersTokensRepository = require("@modules/accounts/repositories/IUsersTokensRepository");
+var _IUsersTokensRepository = require("../../repositories/IUsersTokensRepository");
 
 var _path = require("path");
 
@@ -15,11 +15,11 @@ var _tsyringe = require("tsyringe");
 
 var _uuid = require("uuid");
 
-var _IDateProvider = require("@shared/container/providers/DateProvider/IDateProvider");
+var _IDateProvider = require("../../../../shared/container/providers/DateProvider/IDateProvider");
 
-var _IMailProvider = require("@shared/container/providers/MailProvider/IMailProvider");
+var _IMailProvider = require("../../../../shared/container/providers/MailProvider/IMailProvider");
 
-var _AppError = _interopRequireDefault(require("@shared/errors/AppError"));
+var _AppError = _interopRequireDefault(require("../../../../shared/errors/AppError"));
 
 var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _class;
 

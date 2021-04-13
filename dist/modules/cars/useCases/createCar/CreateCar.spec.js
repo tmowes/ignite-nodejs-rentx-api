@@ -1,8 +1,8 @@
 "use strict";
 
-var _CarsRepositoryInMemory = require("@modules/cars/repositories/inMemory/CarsRepositoryInMemory");
+var _CarsRepositoryInMemory = require("../../repositories/inMemory/CarsRepositoryInMemory");
 
-var _AppError = _interopRequireDefault(require("@shared/errors/AppError"));
+var _AppError = _interopRequireDefault(require("../../../../shared/errors/AppError"));
 
 var _CreateCarUseCase = require("./CreateCarUseCase");
 

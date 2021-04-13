@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.CreateCars1617140437156 = void 0;
 
-var _Car = require("@modules/cars/infra/typeorm/entities/Car");
+var _Car = require("../../../../modules/cars/infra/typeorm/entities/Car");
 
-var _Category = require("@modules/cars/infra/typeorm/entities/Category");
+var _Category = require("../../../../modules/cars/infra/typeorm/entities/Category");
 
 var _typeorm = require("typeorm");
 

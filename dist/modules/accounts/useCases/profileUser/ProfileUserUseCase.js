@@ -5,13 +5,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ProfileUserUseCase = void 0;
 
-var _UserMap = require("@modules/accounts/mapper/UserMap");
+var _UserMap = require("../../mapper/UserMap");
 
-var _IUsersRepository = require("@modules/accounts/repositories/IUsersRepository");
+var _IUsersRepository = require("../../repositories/IUsersRepository");
 
 var _tsyringe = require("tsyringe");
 
-var _AppError = _interopRequireDefault(require("@shared/errors/AppError"));
+var _AppError = _interopRequireDefault(require("../../../../shared/errors/AppError"));
 
 var _dec, _dec2, _dec3, _dec4, _class;
 

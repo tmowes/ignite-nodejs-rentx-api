@@ -1,8 +1,8 @@
 "use strict";
 
-var _UsersRepositoryInMemory = require("@modules/accounts/repositories/inMemory/UsersRepositoryInMemory");
+var _UsersRepositoryInMemory = require("../../repositories/inMemory/UsersRepositoryInMemory");
 
-var _AppError = _interopRequireDefault(require("@shared/errors/AppError"));
+var _AppError = _interopRequireDefault(require("../../../../shared/errors/AppError"));
 
 var _CreateUserUseCase = require("./CreateUserUseCase");
 

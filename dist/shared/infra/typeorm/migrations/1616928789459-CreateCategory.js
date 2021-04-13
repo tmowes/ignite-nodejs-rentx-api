@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.CreateCategory1616928789459 = void 0;
 
-var _Category = require("@modules/cars/infra/typeorm/entities/Category");
+var _Category = require("../../../../modules/cars/infra/typeorm/entities/Category");
 
 var _typeorm = require("typeorm");
 

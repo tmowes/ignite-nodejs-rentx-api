@@ -5,11 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.categoriesRoutes = void 0;
 
-var _CreateCategoryController = require("@modules/cars/useCases/createCategory/CreateCategoryController");
+var _CreateCategoryController = require("../../../../modules/cars/useCases/createCategory/CreateCategoryController");
 
-var _ImportCategoryController = require("@modules/cars/useCases/importCategory/ImportCategoryController");
+var _ImportCategoryController = require("../../../../modules/cars/useCases/importCategory/ImportCategoryController");
 
-var _ListAllCategoriesController = require("@modules/cars/useCases/listAllCategories/ListAllCategoriesController");
+var _ListAllCategoriesController = require("../../../../modules/cars/useCases/listAllCategories/ListAllCategoriesController");
 
 var _express = require("express");
 

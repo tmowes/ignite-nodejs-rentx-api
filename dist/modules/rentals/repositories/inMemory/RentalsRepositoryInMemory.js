@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.RentalsRepositoryInMemory = void 0;
 
-var _Rental = require("@modules/rentals/infra/typeorm/entities/Rental");
+var _Rental = require("../../infra/typeorm/entities/Rental");
 
 class RentalsRepositoryInMemory {
   constructor() {

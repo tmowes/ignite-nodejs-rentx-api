@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.CreateUsersToken1618245328456 = void 0;
 
-var _User = require("@modules/accounts/infra/typeorm/entities/User");
+var _User = require("../../../../modules/accounts/infra/typeorm/entities/User");
 
-var _UserTokens = require("@modules/accounts/infra/typeorm/entities/UserTokens");
+var _UserTokens = require("../../../../modules/accounts/infra/typeorm/entities/UserTokens");
 
 var _typeorm = require("typeorm");
 
