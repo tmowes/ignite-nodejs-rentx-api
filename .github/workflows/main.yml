@@ -3,11 +3,13 @@ name: CI
 on:
   push:
     branches: [ main ]
+    
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v2
       
@@ -21,8 +23,7 @@ jobs:
         
       - name: BUILD APLICATION
         run: yarn build
-        
-      - name: COPY FILES INTO THE BUCKET
+
       - uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
