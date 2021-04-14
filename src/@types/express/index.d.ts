@@ -19,6 +19,7 @@ type CustomEnvVar =
   | 'REDIS_HOST'
   | 'REDIS_PORT'
   | 'REDIS_PASSWORD'
+  | 'SENTRY_DSN'
 
 type ProcessEnvExtended = {
   [key in CustomEnvVar]: string
