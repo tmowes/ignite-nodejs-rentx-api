@@ -16,6 +16,9 @@ type CustomEnvVar =
   | 'STORAGE_PROVIDER'
   | 'MAIL_PROVIDER'
   | 'APP_API_URL'
+  | 'REDIS_HOST'
+  | 'REDIS_PORT'
+  | 'REDIS_PASSWORD'
 
 type ProcessEnvExtended = {
   [key in CustomEnvVar]: string
