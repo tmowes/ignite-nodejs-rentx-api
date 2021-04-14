@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: SETUP NODEJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          
+      - name: INSTALL DEPENDECIES
+        run: yarn
+        
+      - name: BUILD APLICATION
+        run: yarn build
+        
+      - name: COPY FILES INTO THE BUCKET
+      - uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secretes.SSH_KEY }}
+          source: "., !node_modules"
+          target: "~/app/api-rentx"
+
+        
